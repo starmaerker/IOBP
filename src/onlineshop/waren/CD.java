@@ -1,6 +1,6 @@
 package onlineshop.waren;
 
-public class CD extends Artikel {	
+public class CD {	
 	private String interpret;
 
 	public String getInterpret() {

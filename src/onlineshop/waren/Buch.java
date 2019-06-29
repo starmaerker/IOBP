@@ -1,6 +1,6 @@
 package onlineshop.waren;
 
-public class Buch extends Artikel {	
+public abstract class Buch extends Artikel {	
 	protected String autor;
 
 	public String getAutor() {
@@ -12,6 +12,8 @@ public class Buch extends Artikel {
 	}
 	
 	public String getBeschreibung() {
-		return super.getBeschreibung() + " von " + autor;
+		return super.getBeschreibung() + Artikel.TRENNZEICHEN + autor;
 	}
+
+	public abstract String getTwitterBeschreibung();
 }

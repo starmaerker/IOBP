@@ -1,8 +1,8 @@
 package onlineshop;
 
-import onlineshop.abwicklung.Warenkorb;
-import onlineshop.nutzer.Kunde;
-import onlineshop.waren.Buch;
+import onlineshop.abwicklung.*;
+import onlineshop.nutzer.*;
+import onlineshop.waren.*;
 
 public class OnlineShop {
 
@@ -18,12 +18,15 @@ public class OnlineShop {
 		 * Warenkorb ware = new Warenkorb(); ware.pruefeAltersfreigabe(17);
 		 */
 		
-		Buch buch = new Buch();
+		Sachbuch buch = new Sachbuch();
 		buch.setAutor("Adam Douglas");
 		buch.setTitel("Per Anhalter durch die Galaxy");
 		buch.setHersteller("42");
 		
 		System.out.println(buch.getBeschreibung());
+		System.out.println(buch.getTwitterBeschreibung());
+		
+		
 	}
 
 }
