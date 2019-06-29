@@ -1,5 +1,8 @@
 package onlineshop;
 
+import onlineshop.abwicklung.Warenkorb;
+import onlineshop.nutzer.Kunde;
+
 public class OnlineShop {
 
 	public static void main(String[] args) {
@@ -9,7 +12,10 @@ public class OnlineShop {
 		me.setName("Centauri");
 		me.setVorname("Alpha");
 				
-	    System.out.println(me.getVorname() + " " + me.getName());
+	    //System.out.println(me.getVorname() + " " + me.getName());
+		
+		Warenkorb ware = new Warenkorb();
+		ware.pruefeAltersfreigabe(17);
 	}
 
 }

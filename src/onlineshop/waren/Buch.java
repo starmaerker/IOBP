@@ -1,8 +1,8 @@
-package onlineshop;
+package onlineshop.waren;
 
-public class Musikartikel {
+public class Buch {
 	private String hersteller;
 	private String titel;
 	private String artikelNummer;
-	private String interpres;
+	private String autor;
 }

@@ -1,4 +1,4 @@
-package onlineshop;
+package onlineshop.nutzer;
 
 public class Kunde {
 	private String name;

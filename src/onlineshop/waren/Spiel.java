@@ -1,8 +1,8 @@
-package onlineshop;
+package onlineshop.waren;
 
-public class Film {
+public class Spiel {
 	private String hersteller;
 	private String titel;
 	private String artikelNummer;
-	private String regisseur;
+	private String autor;
 }
