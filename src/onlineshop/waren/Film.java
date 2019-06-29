@@ -1,8 +1,13 @@
 package onlineshop.waren;
 
-public class Film {
-	private String hersteller;
-	private String titel;
-	private String artikelNummer;
+public class Film {	
 	private String regisseur;
+
+	public String getRegisseur() {
+		return regisseur;
+	}
+
+	public void setRegisseur(String regisseur) {
+		this.regisseur = regisseur;
+	}
 }

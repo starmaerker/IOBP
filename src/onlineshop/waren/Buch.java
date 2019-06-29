@@ -1,8 +1,17 @@
 package onlineshop.waren;
 
-public class Buch {
-	private String hersteller;
-	private String titel;
-	private String artikelNummer;
-	private String autor;
+public class Buch extends Artikel {	
+	protected String autor;
+
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+	
+	public String getBeschreibung() {
+		return super.getBeschreibung() + " von " + autor;
+	}
 }
