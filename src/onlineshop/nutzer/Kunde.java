@@ -1,6 +1,7 @@
 package onlineshop.nutzer;
 
 import onlineshop.abwicklung.Warenkorb;
+import onlineshop.exception.*;
 
 public class Kunde {
 	private String name;
@@ -13,7 +14,7 @@ public class Kunde {
 	private Warenkorb warenkorb;
 	
 	public Kunde() {
-		warenkorb = new Warenkorb();
+		setWarenkorb(new Warenkorb());
 		mindestbestellwert = 10;
 	}
 	
@@ -29,6 +30,14 @@ public class Kunde {
 		this.geburtsdatum = datum;
 	}
 	
+	public double getMindestbestellwert() {
+		return mindestbestellwert;
+	}
+	
+	public void setMindestbestellwert(double mindestbestellwert) {
+		this.mindestbestellwert = mindestbestellwert;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -40,13 +49,7 @@ public class Kunde {
 	}
 	public void setVorname(String vorname) {
 		this.vorname = vorname;
-	}
-	public String getGeschlecht() {
-		return geschlecht;
-	}
-	public void setGeschlecht(String geschlecht) {
-		this.geschlecht = geschlecht;
-	}
+	}	
 	public String getGeburtsdatum() {
 		return geburtsdatum;
 	}
@@ -64,5 +67,30 @@ public class Kunde {
 	}
 	public void setAnzahlDerEinkaeufe(int anzahlDerEinkaeufe) {
 		this.anzahlDerEinkaeufe = anzahlDerEinkaeufe;
+	}
+
+	public Warenkorb getWarenkorb() {
+		return warenkorb;
+	}
+
+	public void setWarenkorb(Warenkorb warenkorb) {
+		this.warenkorb = warenkorb;
+	}
+	
+	public String getGeschlecht() throws UngueltigesGeschlechtException {
+		if (geschlecht == "w" || geschlecht == "m")
+			return geschlecht;
+		else
+			throw new UngueltigesGeschlechtException();
+	}
+	
+	public double returnMindestbestellwert() throws MindestbestellwertNegativException {
+		if(mindestbestellwert >= 0) {
+			return mindestbestellwert;
+		}
+		else {
+			throw new MindestbestellwertNegativException();
+			
+		}
 	}
 }

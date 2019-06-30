@@ -3,9 +3,25 @@ package onlineshop.abwicklung;
 import onlineshop.nutzer.Kunde;
 
 public class Warenkorb {
-	private float anzahlArtikel;
-	private float artikelSumme;
+	private int anzahlArtikel;
+	private int artikelSumme;
 	private boolean gutscheinEingeloest;
+	
+	public Warenkorb() {
+		anzahlArtikel = 0;
+		artikelSumme = 0;
+	}
+	
+	public double preisProArtikel() throws ArithmeticException {
+		double ergebnis;
+		try {
+			ergebnis = artikelSumme / anzahlArtikel;
+		}
+		catch(ArithmeticException ex) {
+			throw new ArithmeticException("Warenkorb ist leer!");
+		}
+		return ergebnis;		
+	}
 	
 	public float berechneSumme(Kunde kunde) {
 		float result = artikelSumme;
